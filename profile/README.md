@@ -15,6 +15,7 @@
 | [explorer.zzero.net](https://explorer.zzero.net) | Network explorer |
 | [mcp.zzero.net](https://mcp.zzero.net) | MCP integration |
 | [pay.zzero.net](https://pay.zzero.net) | Payment widget SDK |
+| [app.zzero.net](https://app.zzero.net) | Bridge, wallet & faucet |
 
 ### MCP Server
 
