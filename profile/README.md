@@ -56,7 +56,7 @@ AI agents can connect to the Zero MCP server for instant access to documentation
   "mcpServers": {
     "zero": {
       "command": "uvx",
-      "args": ["--from", "zero-mcp", "zero-mcp"]
+      "args": ["--from", "zero-network-mcp", "zero-mcp"]
     }
   }
 }
