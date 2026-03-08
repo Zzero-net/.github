@@ -23,6 +23,7 @@
 | | |
 |---|---|
 | [zero-chain](https://github.com/Zzero-net/zero-chain) | Node implementation (Rust) — 7 crates, 198 tests |
+| [zero-contracts](https://github.com/Zzero-net/zero-contracts) | Bridge contracts (Solidity/Foundry) — ZeroVault, 53 tests |
 
 ### SDKs
 
