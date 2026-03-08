@@ -18,6 +18,12 @@
 | [app.zzero.net](https://app.zzero.net) | Bridge, wallet & faucet |
 | [install.zzero.net](https://install.zzero.net) | Node installer |
 
+### Core
+
+| | |
+|---|---|
+| [zero-chain](https://github.com/Zzero-net/zero-chain) | Node implementation (Rust) — 7 crates, 198 tests |
+
 ### SDKs
 
 ```bash
