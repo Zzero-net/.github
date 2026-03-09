@@ -2,7 +2,7 @@
 
 **Permissionless stablecoin microtransaction network for users and AI agents.**
 
-1 Z = $0.01 USD | 100-byte transactions | <500ms finality | $0.0001 flat fee
+1 Z = $0.01 USD | 136-byte transactions | <500ms finality | $0.0001 flat fee
 
 ---
 
@@ -22,8 +22,8 @@
 
 | | |
 |---|---|
-| [zero-chain](https://github.com/Zzero-net/zero-chain) | Node implementation (Rust) — 7 crates, 198 tests |
-| [zero-contracts](https://github.com/Zzero-net/zero-contracts) | Bridge contracts (Solidity/Foundry) — ZeroVault, 53 tests |
+| [zero-chain](https://github.com/Zzero-net/zero-chain) | Node implementation (Rust) — 7 crates, 202 tests |
+| [zero-contracts](https://github.com/Zzero-net/zero-contracts) | Bridge contracts (Solidity/Foundry) — ZeroVault + ZeroTimelock, 98 tests |
 
 ### SDKs
 
@@ -71,11 +71,23 @@ zero-node init --validator
 zero-node run
 ```
 
+### Network Fees
+
+| Fee | Amount | USD |
+|-----|--------|-----|
+| Transfer | 0.01 Z | $0.0001 |
+| Account creation | 5 Z (one-time) | $0.05 |
+| Bridge out | 0.50 Z | $0.005 |
+| Bridge in | Free | $0.00 |
+
+Fee distribution: 70% validators, 15% bridge reserve, 15% protocol reserve.
+
 ### Key Facts
 
 - **Stablecoin**: 1:1 USDC/USDT backed on Base + Arbitrum
-- **Micro-optimized**: 100-byte transactions, 0.01 Z ($0.0001) flat fee
+- **Micro-optimized**: 136-byte transactions, 0.01 Z ($0.0001) flat fee, 25 Z ($0.25) max per tx
 - **Agent-native**: x402 protocol support, MCP payment integration
-- **No smart contracts**: Transfer-only by design
-- **Block-lattice**: Each account has its own chain, parallel processing
-- **Bridge**: Trinity Validators (2-of-3 multisig), tiered circuit breaker
+- **No smart contracts**: Transfer-only by design — one operation: move Z from A to B
+- **Block-lattice**: Each account has its own chain, parallel processing, no global ordering bottleneck
+- **Bridge**: Trinity Validators (2-of-3 multisig), EIP-712 signatures, tiered circuit breaker (20%/50%)
+- **Timelock admin**: 24h delay on all vault admin operations, 2-of-3 guardian threshold
